@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { CreateStatusDto } from './dto/create-status.dto';
-import { UpdateStatusDto } from './dto/update-status.dto';
+import { StatusDTO } from './dto/status.dto';
 
 @Injectable()
 export class StatusService {
-  create(createStatusDto: CreateStatusDto) {
+  create(statusDto: StatusDTO) {
+    const { context, message } = statusDto;
     return 'This action adds a new status';
   }
 
-  findAll() {
+  /*findAll() {
     return `This action returns all status`;
   }
 
@@ -22,5 +22,5 @@ export class StatusService {
 
   remove(id: number) {
     return `This action removes a #${id} status`;
-  }
+  }*/
 }
