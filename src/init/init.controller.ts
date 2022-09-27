@@ -1,18 +1,25 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
+import { InitDTO } from './dto/init.dto';
 import { InitService } from './init.service';
-import { CreateInitDto } from './dto/create-init.dto';
-import { UpdateInitDto } from './dto/update-init.dto';
 
 @Controller('init')
 export class InitController {
-  constructor(private readonly initService: InitService) {}
+  constructor(private readonly initService: InitService) { }
 
   @Post()
-  create(@Body() createInitDto: CreateInitDto) {
-    return this.initService.create(createInitDto);
+  create(@Body() initDto: InitDTO) {
+    return this.initService.handleInit(initDto);
   }
 
-  @Get()
+  /*@Get()
   findAll() {
     return this.initService.findAll();
   }
@@ -30,5 +37,5 @@ export class InitController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.initService.remove(+id);
-  }
+  }*/
 }

@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { CreateInitDto } from './dto/create-init.dto';
-import { UpdateInitDto } from './dto/update-init.dto';
+import { InitDTO } from './dto/init.dto';
 
 @Injectable()
 export class InitService {
-  create(createInitDto: CreateInitDto) {
+  handleInit(initDto: InitDTO) {
+    const { context, message } = initDto;
     return 'This action adds a new init';
   }
 
-  findAll() {
+  /*findAll() {
     return `This action returns all init`;
   }
 
@@ -22,5 +22,5 @@ export class InitService {
 
   remove(id: number) {
     return `This action removes a #${id} init`;
-  }
+  }*/
 }
