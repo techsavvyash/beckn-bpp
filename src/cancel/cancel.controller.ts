@@ -1,22 +1,29 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { CancelService } from './cancel.service';
-import { CreateCancelDto } from './dto/create-cancel.dto';
-import { UpdateCancelDto } from './dto/update-cancel.dto';
+import { CancelDTO } from './dto/cancel.dto';
 
 @Controller('cancel')
 export class CancelController {
-  constructor(private readonly cancelService: CancelService) {}
+  constructor(private readonly cancelService: CancelService) { }
 
   @Post()
-  create(@Body() createCancelDto: CreateCancelDto) {
-    return this.cancelService.create(createCancelDto);
+  handleCancel(@Body() cancelDto: CancelDTO) {
+    return this.cancelService.handleCancel(cancelDto);
   }
 
-  @Get()
+  /*@Get()
   findAll() {
     return this.cancelService.findAll();
   }
-
+/
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.cancelService.findOne(+id);
@@ -30,5 +37,5 @@ export class CancelController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.cancelService.remove(+id);
-  }
+  }*/
 }

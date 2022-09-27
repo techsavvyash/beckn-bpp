@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { CreateCancelDto } from './dto/create-cancel.dto';
-import { UpdateCancelDto } from './dto/update-cancel.dto';
+import { CancelDTO } from './dto/cancel.dto';
 
 @Injectable()
 export class CancelService {
-  create(createCancelDto: CreateCancelDto) {
+  handleCancel(cancelDto: CancelDTO) {
+    const { context, message } = cancelDto;
     return 'This action adds a new cancel';
   }
 
-  findAll() {
+  /*findAll() {
     return `This action returns all cancel`;
   }
 
@@ -22,5 +22,5 @@ export class CancelService {
 
   remove(id: number) {
     return `This action removes a #${id} cancel`;
-  }
+  }*/
 }
