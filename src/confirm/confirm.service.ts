@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { CreateConfirmDto } from './dto/create-confirm.dto';
-import { UpdateConfirmDto } from './dto/update-confirm.dto';
+import { ConfirmDTO } from './dto/confirm.dto';
 
 @Injectable()
 export class ConfirmService {
-  create(createConfirmDto: CreateConfirmDto) {
+  create(confirmDto: ConfirmDTO) {
+    const { context, message } = confirmDto;
     return 'This action adds a new confirm';
   }
 
-  findAll() {
+  /*findAll() {
     return `This action returns all confirm`;
   }
 
@@ -22,5 +22,5 @@ export class ConfirmService {
 
   remove(id: number) {
     return `This action removes a #${id} confirm`;
-  }
+  }*/
 }

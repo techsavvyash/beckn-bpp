@@ -1,18 +1,25 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { ConfirmService } from './confirm.service';
-import { CreateConfirmDto } from './dto/create-confirm.dto';
-import { UpdateConfirmDto } from './dto/update-confirm.dto';
+import { ConfirmDTO } from './dto/confirm.dto';
 
 @Controller('confirm')
 export class ConfirmController {
-  constructor(private readonly confirmService: ConfirmService) {}
+  constructor(private readonly confirmService: ConfirmService) { }
 
   @Post()
-  create(@Body() createConfirmDto: CreateConfirmDto) {
-    return this.confirmService.create(createConfirmDto);
+  create(@Body() confirmDto: ConfirmDTO) {
+    return this.confirmService.create(confirmDto);
   }
 
-  @Get()
+  /*@Get()
   findAll() {
     return this.confirmService.findAll();
   }
@@ -30,5 +37,5 @@ export class ConfirmController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.confirmService.remove(+id);
-  }
+  }*/
 }
