@@ -4,6 +4,6 @@ import { SelectController } from './select.controller';
 
 @Module({
   controllers: [SelectController],
-  providers: [SelectService]
+  providers: [SelectService],
 })
-export class SelectModule {}
+export class SelectModule { }

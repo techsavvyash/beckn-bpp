@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { SelectDTO } from './dto/select.dto';
 import { SelectService } from './select.service';
 
@@ -8,6 +16,6 @@ export class SelectController {
 
   @Post()
   create(@Body() selectDto: SelectDTO) {
-    return this.selectService.create(selectDto);
+    return this.selectService.handleSelect(selectDto);
   }
 }

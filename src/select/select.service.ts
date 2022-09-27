@@ -5,11 +5,13 @@ import { SelectDTO } from './dto/select.dto';
 
 @Injectable()
 export class SelectService {
-  create(createSelectDto: SelectDTO) {
+  handleSelect(selectDto: SelectDTO) {
+    const { context, message } = selectDto;
+    // logic for the select post call here!
     return 'This action adds a new select';
   }
 
-  findAll() {
+  /*findAll() {
     return `This action returns all select`;
   }
 
@@ -19,5 +21,5 @@ export class SelectService {
 
   remove(id: number) {
     return `This action removes a #${id} select`;
-  }
+  }*/
 }
