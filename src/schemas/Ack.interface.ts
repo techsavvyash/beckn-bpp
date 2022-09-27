@@ -1,5 +1,5 @@
 import { AckEnum } from './types/ack.enum';
 
-export default interface Ack {
+export default interface AckInterface {
   status: AckEnum;
 }

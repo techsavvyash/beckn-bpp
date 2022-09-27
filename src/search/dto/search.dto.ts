@@ -1,7 +1,11 @@
-import ContextInterface from "src/interfaces/Context.interface";
-import MessageInterface from "src/interfaces/Message.interface";
+import ContextInterface from 'src/schemas/Context.interface';
+import IntentInterface from 'src/schemas/Intent.interface';
 
 export class SearchDTO {
+  // @IsNotEmpty()
   context: ContextInterface;
-  message: MessageInterface;
+  // @IsNotEmpty()
+  message: {
+    intent: IntentInterface;
+  };
 }

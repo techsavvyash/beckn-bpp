@@ -1,18 +1,25 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
+import { SearchDTO } from './dto/search.dto';
 import { SearchService } from './search.service';
-import { CreateSearchDto } from './dto/create-search.dto';
-import { UpdateSearchDto } from './dto/update-search.dto';
 
 @Controller('search')
 export default class SearchController {
   constructor(private readonly searchService: SearchService) { }
 
   @Post()
-  create(@Body() createSearchDto: CreateSearchDto) {
-    return this.searchService.create(createSearchDto);
+  create(@Body() searchDto: SearchDTO) {
+    return this.searchService.handleSearch(searchDto);
   }
 
-  @Get()
+  /*@Get()
   findAll() {
     return this.searchService.findAll();
   }
@@ -30,5 +37,5 @@ export default class SearchController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.searchService.remove(+id);
-  }
+  }*/
 }

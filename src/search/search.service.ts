@@ -1,14 +1,17 @@
 import { Injectable } from '@nestjs/common';
-import { CreateSearchDto } from './dto/create-search.dto';
-import { UpdateSearchDto } from './dto/update-search.dto';
+import { SearchDTO } from './dto/search.dto';
 
 @Injectable()
 export class SearchService {
-  create(createSearchDto: CreateSearchDto) {
+  handleSearch(searchDto: SearchDTO) {
+    const { context, message } = searchDto;
+
+    // calls to consumers are added here
+
     return 'This action adds a new search';
   }
 
-  findAll() {
+  /*findAll() {
     return `This action returns all search`;
   }
 
@@ -22,5 +25,5 @@ export class SearchService {
 
   remove(id: number) {
     return `This action removes a #${id} search`;
-  }
+  }*/
 }
