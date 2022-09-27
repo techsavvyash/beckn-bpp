@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { CreateSupportDto } from './dto/create-support.dto';
-import { UpdateSupportDto } from './dto/update-support.dto';
+import { SupportDTO } from './dto/support.dto';
 
 @Injectable()
 export class SupportService {
-  create(createSupportDto: CreateSupportDto) {
+  create(supportDto: SupportDTO) {
+    const { context, message } = supportDto;
     return 'This action adds a new support';
   }
 
-  findAll() {
+  /*findAll() {
     return `This action returns all support`;
   }
 
@@ -22,5 +22,5 @@ export class SupportService {
 
   remove(id: number) {
     return `This action removes a #${id} support`;
-  }
+  }*/
 }
