@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { CreateTrackDto } from './dto/create-track.dto';
-import { UpdateTrackDto } from './dto/update-track.dto';
+import { TrackDTO } from './dto/track.dto';
 
 @Injectable()
 export class TrackService {
-  create(createTrackDto: CreateTrackDto) {
+  handleTrack(trackDto: TrackDTO) {
+    const { context, message } = trackDto;
     return 'This action adds a new track';
   }
 
-  findAll() {
+  /*findAll() {
     return `This action returns all track`;
   }
 
@@ -22,5 +22,5 @@ export class TrackService {
 
   remove(id: number) {
     return `This action removes a #${id} track`;
-  }
+  }*/
 }
