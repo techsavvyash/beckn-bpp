@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { CreateRatingDto } from './dto/create-rating.dto';
-import { UpdateRatingDto } from './dto/update-rating.dto';
+import { RatingDTO } from './dto/rating.dto';
 
 @Injectable()
 export class RatingService {
-  create(createRatingDto: CreateRatingDto) {
+  create(ratingDto: RatingDTO) {
+    const { context, message } = ratingDto;
     return 'This action adds a new rating';
   }
 
-  findAll() {
+  /*findAll() {
     return `This action returns all rating`;
   }
 
@@ -22,5 +22,5 @@ export class RatingService {
 
   remove(id: number) {
     return `This action removes a #${id} rating`;
-  }
+  }*/
 }
