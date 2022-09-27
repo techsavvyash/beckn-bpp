@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUpdateDto } from './dto/create-update.dto';
-import { UpdateUpdateDto } from './dto/update-update.dto';
+import { UpdateDTO } from './dto/update.dto';
 
 @Injectable()
 export class UpdateService {
-  create(createUpdateDto: CreateUpdateDto) {
+  handleUpdate(updateDto: UpdateDTO) {
+    const { context, message } = updateDto;
     return 'This action adds a new update';
   }
 
-  findAll() {
+  /*findAll() {
     return `This action returns all update`;
   }
 
@@ -22,5 +22,5 @@ export class UpdateService {
 
   remove(id: number) {
     return `This action removes a #${id} update`;
-  }
+  }*/
 }

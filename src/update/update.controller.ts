@@ -1,18 +1,25 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
+import { UpdateDTO } from './dto/update.dto';
 import { UpdateService } from './update.service';
-import { CreateUpdateDto } from './dto/create-update.dto';
-import { UpdateUpdateDto } from './dto/update-update.dto';
 
 @Controller('update')
 export class UpdateController {
-  constructor(private readonly updateService: UpdateService) {}
+  constructor(private readonly updateService: UpdateService) { }
 
   @Post()
-  create(@Body() createUpdateDto: CreateUpdateDto) {
-    return this.updateService.create(createUpdateDto);
+  handleUpdate(@Body() updateDto: UpdateDTO) {
+    return this.updateService.handleUpdate(updateDto);
   }
 
-  @Get()
+  /*@Get()
   findAll() {
     return this.updateService.findAll();
   }
@@ -30,5 +37,5 @@ export class UpdateController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.updateService.remove(+id);
-  }
+  }*/
 }
